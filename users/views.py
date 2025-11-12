@@ -9,11 +9,14 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import RegisterSerializer
 
+from django.shortcuts import redirect
+
 def home_view(request):
     if request.user.is_authenticated:
-        return redirect('profile')   # 👈 logged-in users go to profile
+        return redirect('profile')   # logged-in users → profile
     else:
-        return redirect('register')  # 👈 others go to register
+        return redirect('register')  # new users → register
+ # 👈 others go to register
 
 # ----------------- HTML TEMPLATE VIEWS -----------------
 def register_view(request):
