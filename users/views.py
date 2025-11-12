@@ -9,6 +9,11 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import RegisterSerializer
 
+def home_view(request):
+    if request.user.is_authenticated:
+        return redirect('profile')   # 👈 logged-in users go to profile
+    else:
+        return redirect('register')  # 👈 others go to register
 
 # ----------------- HTML TEMPLATE VIEWS -----------------
 def register_view(request):
