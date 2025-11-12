@@ -1,0 +1,78 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #333;
+}
+
+/* Form container */
+.container {
+  background: white;
+  width: 350px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Heading */
+.container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Inputs */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #6b73ff, #000dff);
+}
+
+/* Links */
+a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Error message */
+p.error {
+  margin-top: 10px;
+  color: #e63946;
+  font-size: 14px;
+}

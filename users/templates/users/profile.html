@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="{% static 'users/style.css' %}">
+  <style>
+
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fcf6f3ff, #1e3bc9ff);
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    }
+
+
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px 50px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 380px;
+      animation: fadeIn 0.7s ease-in-out;
+    }
+
+    .profile-card h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .profile-card p {
+      font-size: 16px;
+      color: #f0f0f0;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #6b73ff, #000dff);
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #5a63e0, #001bcc);
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <h2>👋 Hello, {{ user.username }}</h2>    
+    <p><strong>Email:</strong> {{ user.email }}</p>
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+
+  </div>
+</body>
+</html>
